@@ -24,17 +24,17 @@ const products = [
 
 const resolvers: Resolvers = {
   Query: {
-    allProducts(_, args, context) {
+    allProducts() {
       return products
     },
 
-    product(_, args, context) {
+    product(_, args) {
       return products.find((p) => p.id == args.id)
     },
   },
 
   Product: {
-    createdBy(reference) {
+    createdBy() {
       return {
         email: 'support@apollographql.com',
         totalProductsCreated: 1337,
@@ -48,29 +48,29 @@ const resolvers: Resolvers = {
       }
     },
 
-    variation(reference) {
-      if (reference.variation) {
-        return reference.variation
+    variation(product) {
+      if (product.variation) {
+        return product.variation
       }
 
-      return products.find((p) => p.id == reference.id).variation
+      return products.find((p) => p.id == product.id).variation
     },
 
-    __resolveReference(reference) {
-      if ('id' in reference) {
-        return products.find((p) => p.id == reference.id)
+    __resolveReference(product) {
+      if ('id' in product) {
+        return products.find((p) => p.id == product.id)
       }
 
-      if ('package' in reference && reference.sku) {
+      if ('package' in product && product.sku) {
         return products.find(
-          (p) => p.sku == reference.sku && p.package == reference.package,
+          (p) => p.sku == product.sku && p.package == product.package,
         )
       }
 
       return {
         id: 'rover',
         package: '@apollo/rover',
-        ...reference,
+        ...product,
       }
     },
   },

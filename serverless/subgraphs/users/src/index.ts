@@ -13,8 +13,8 @@ const users = [
 
 const resolvers: Resolvers = {
   User: {
-    __resolveReference(reference) {
-      return users.find((u) => u.email == reference.email)
+    __resolveReference(user) {
+      return users.find((u) => u.email == user.email)
     },
   },
 }
