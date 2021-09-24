@@ -6,7 +6,8 @@
     "start": "serverless offline",
     "build": "npm run build:schema-ast",
     "build:codegen": "graphql-codegen --config graphql-codegen.yml",
-    "prettier": "prettier"
+    "prettier": "prettier",
+    "prettier:fix": "prettier --write ."
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.2.0",
