@@ -1,6 +1,8 @@
 import { buildSubgraphSchema } from '@apollo/federation'
 import { ApolloServer } from 'apollo-server-lambda'
 import schemaAst from './products.json'
+// FIXME TODO
+// import type { Resolvers } from './products'
 
 const products = [
   {

@@ -1,6 +1,7 @@
 import { buildSubgraphSchema } from '@apollo/federation'
 import { ApolloServer } from 'apollo-server-lambda'
 import schemaAst from './inventory.json'
+import type { Resolvers } from './inventory'
 
 const delivery = [
   {
@@ -15,7 +16,7 @@ const delivery = [
   },
 ]
 
-const resolvers = {
+const resolvers: Resolvers = {
   Product: {
     delivery(product) {
       return delivery.find((p) => p.id == product.id)
