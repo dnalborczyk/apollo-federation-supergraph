@@ -2,7 +2,7 @@ import { buildSubgraphSchema } from '@apollo/federation'
 import { ApolloServer } from 'apollo-server-lambda'
 import schemaAst from './products.json'
 // FIXME TODO
-// import type { Resolvers } from './products'
+// import type { Resolvers } from "./products";
 
 const products = [
   {
@@ -21,16 +21,30 @@ const products = [
 
 const resolvers = {
   Query: {
-    allProducts: (_, args, context) => {
+    allProducts(_, args, context) {
       return products
     },
 
-    product: (_, args, context) => {
+    product(_, args, context) {
       return products.find((p) => p.id == args.id)
     },
   },
 
   Product: {
+    createdBy(reference) {
+      return {
+        email: 'support@apollographql.com',
+        totalProductsCreated: 1337,
+      }
+    },
+
+    dimensions() {
+      return {
+        size: '1',
+        weight: 1,
+      }
+    },
+
     variation(reference) {
       if (reference.variation) {
         return {
@@ -43,21 +57,7 @@ const resolvers = {
       }
     },
 
-    dimensions() {
-      return {
-        size: '1',
-        weight: 1,
-      }
-    },
-
-    createdBy(reference) {
-      return {
-        email: 'support@apollographql.com',
-        totalProductsCreated: 1337,
-      }
-    },
-
-    __resolveReference: (reference) => {
+    __resolveReference(reference) {
       if (reference.id) {
         return products.find((p) => p.id == reference.id)
       }
