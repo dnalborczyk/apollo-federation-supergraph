@@ -1,23 +1,7 @@
 import { buildSubgraphSchema } from '@apollo/federation'
 import { ApolloServer } from 'apollo-server-lambda'
+import resolvers from './resolvers'
 import schemaAst from './users.json'
-import type { Resolvers } from './users'
-
-const users = [
-  {
-    email: 'support@apollographql.com',
-    name: 'Apollo Studio Support',
-    totalProductsCreated: 4,
-  },
-]
-
-const resolvers: Resolvers = {
-  User: {
-    __resolveReference(user) {
-      return users.find((u) => u.email == user.email)
-    },
-  },
-}
 
 const server = new ApolloServer({
   schema: buildSubgraphSchema({
