@@ -5,4 +5,4 @@ subgraph-inventory:
         method: POST
         path: inventory
         # private: true
-  handler: subgraphs/inventory/index.default
+  handler: subgraphs/inventory/src/index.default

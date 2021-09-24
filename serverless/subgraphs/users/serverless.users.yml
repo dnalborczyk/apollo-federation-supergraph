@@ -5,4 +5,4 @@ subgraph-users:
         method: POST
         path: users
         # private: true
-  handler: subgraphs/users/index.default
+  handler: subgraphs/users/src/index.default

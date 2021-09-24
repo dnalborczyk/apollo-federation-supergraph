@@ -5,4 +5,4 @@ subgraph-products:
         method: POST
         path: products
         # private: true
-  handler: subgraphs/products/index.default
+  handler: subgraphs/products/src/index.default
