@@ -3,6 +3,7 @@ documents: null
 generates:
   ./subgraphs/inventory/src/inventory.d.ts:
     config:
+      federation: true
       immutableTypes: true
       useIndexSignature: true
       useTypeImports: true
@@ -13,6 +14,7 @@ generates:
 
   ./subgraphs/products/src/products.d.ts:
     config:
+      federation: true
       immutableTypes: true
       useIndexSignature: true
       useTypeImports: true
@@ -23,6 +25,7 @@ generates:
 
   ./subgraphs/users/src/users.d.ts:
     config:
+      federation: true
       immutableTypes: true
       useIndexSignature: true
       useTypeImports: true
