@@ -1,25 +1,28 @@
 import { buildSubgraphSchema } from '@apollo/federation'
 import { ApolloServer } from 'apollo-server-lambda'
 import schemaAst from './products.json'
-// FIXME TODO
-// import type { Resolvers } from "./products";
+import type { Resolvers } from './products'
 
 const products = [
   {
     id: 'apollo-federation',
     package: '@apollo/federation',
     sku: 'federation',
-    variation: 'OSS',
+    variation: {
+      id: 'OSS',
+    },
   },
   {
     id: 'apollo-studio',
     package: '',
     sku: 'studio',
-    variation: 'platform',
+    variation: {
+      id: 'platform',
+    },
   },
 ]
 
-const resolvers = {
+const resolvers: Resolvers = {
   Query: {
     allProducts(_, args, context) {
       return products
@@ -47,22 +50,18 @@ const resolvers = {
 
     variation(reference) {
       if (reference.variation) {
-        return {
-          id: reference.variation,
-        }
+        return reference.variation
       }
 
-      return {
-        id: products.find((p) => p.id == reference.id).variation,
-      }
+      return products.find((p) => p.id == reference.id).variation
     },
 
     __resolveReference(reference) {
-      if (reference.id) {
+      if ('id' in reference) {
         return products.find((p) => p.id == reference.id)
       }
 
-      if (reference.sku && reference.package) {
+      if ('package' in reference && reference.sku) {
         return products.find(
           (p) => p.sku == reference.sku && p.package == reference.package,
         )
