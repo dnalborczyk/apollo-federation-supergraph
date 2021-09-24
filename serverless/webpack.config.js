@@ -1,4 +1,4 @@
-const { lib } = require("serverless-webpack");
+const { lib } = require('serverless-webpack')
 
 module.exports = {
   entry: lib.entries,
@@ -11,12 +11,12 @@ module.exports = {
   //   "apollo-server-lambda",
   //   "graphql",
   // ],
-  mode: "development",
+  mode: 'development',
   // mode: 'production',
   module: {
     rules: [
       {
-        loader: "ts-loader",
+        loader: 'ts-loader',
         options: {
           experimentalWatchApi: true,
           // transpileOnly: true,
@@ -27,7 +27,7 @@ module.exports = {
   },
   resolve: {
     // extensions: [".js", ".json", ".ts"],
-    mainFields: ["main"],
+    mainFields: ['main'],
   },
-  target: "node",
-};
+  target: 'node',
+}

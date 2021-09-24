@@ -1,6 +1,6 @@
 service: supergraph-serverless
 
-frameworkVersion: "2"
+frameworkVersion: '2'
 
 package:
   individually: true
