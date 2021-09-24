@@ -1,0 +1,38 @@
+documents: null
+
+generates:
+  ./subgraphs/inventory/src/inventory.d.ts:
+    config:
+      immutableTypes: true
+      useIndexSignature: true
+      useTypeImports: true
+    plugins:
+      - typescript
+      - typescript-resolvers
+    schema: subgraphs/inventory/src/*.graphql
+
+  ./subgraphs/products/src/products.d.ts:
+    config:
+      immutableTypes: true
+      useIndexSignature: true
+      useTypeImports: true
+    plugins:
+      - typescript
+      - typescript-resolvers
+    schema: subgraphs/products/src/*.graphql
+
+  ./subgraphs/users/src/users.d.ts:
+    config:
+      immutableTypes: true
+      useIndexSignature: true
+      useTypeImports: true
+    plugins:
+      - typescript
+      - typescript-resolvers
+    schema: subgraphs/users/src/*.graphql
+
+hooks:
+  afterOneFileWrite:
+    - npx prettier --write
+
+overwrite: true

@@ -4,9 +4,14 @@
   "license": "MIT",
   "scripts": {
     "start": "serverless offline",
-    "build": "npm run build:schema-ast"
+    "build": "npm run build:schema-ast",
+    "build:codegen": "graphql-codegen --config graphql-codegen.yml",
+    "prettier": "prettier"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.2.0",
+    "@graphql-codegen/typescript": "2.2.2",
+    "@graphql-codegen/typescript-resolvers": "2.2.1",
     "graphql-tag": "2.12.5",
     "lerna": "^4.0.0",
     "serverless": "2.59.0",
