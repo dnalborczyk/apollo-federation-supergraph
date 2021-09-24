@@ -1,0 +1,7 @@
+supergraph-gateway:
+  events:
+    - http:
+        cors: true
+        method: POST
+        path: /graphql
+  handler: gateway/index.default

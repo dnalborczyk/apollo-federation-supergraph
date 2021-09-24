@@ -1,0 +1,33 @@
+service: supergraph-serverless
+
+frameworkVersion: "2"
+
+package:
+  individually: true
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  lambdaHashingVersion: 20201221
+  memorySize: 256
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  - ${file(./gateway/serverless.gateway.yml)}
+  - ${file(./subgraphs/inventory/serverless.inventory.yml)}
+  - ${file(./subgraphs/products/serverless.products.yml)}
+  - ${file(./subgraphs/users/serverless.users.yml)}
+
+custom:
+  # webpack:
+  # node modules configuration for packaging
+  # includeModules: true
+
+  serverless-offline:
+    allowCache: true
+    httpPort: 4000
+    noPrependStageInUrl: true
+    useWorkerThreads: true
