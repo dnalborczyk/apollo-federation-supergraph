@@ -67,7 +67,8 @@ const resolvers: Resolvers = {
       return {
         id: 'rover',
         package: '@apollo/rover',
-        ...product,
+        sku: product.sku ?? null,
+        variation: product.variation,
       }
     },
   },
