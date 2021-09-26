@@ -1,4 +1,4 @@
 {
-  "packages": ["gateway", "subgraphs/*"],
+  "packages": ["gateway", "subgraphs/*", "../schema/*"],
   "version": "0.0.0"
 }

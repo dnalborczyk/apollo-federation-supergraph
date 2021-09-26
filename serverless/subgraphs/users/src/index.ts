@@ -1,7 +1,7 @@
 import { buildSubgraphSchema } from '@apollo/federation'
 import { ApolloServer } from 'apollo-server-lambda'
+import schemaAst from 'schema-users'
 import resolvers from './resolvers'
-import schemaAst from './users.json'
 
 const server = new ApolloServer({
   schema: buildSubgraphSchema({

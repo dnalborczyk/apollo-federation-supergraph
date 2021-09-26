@@ -1,4 +1,4 @@
-import type { Resolvers } from './users'
+import type { Resolvers } from 'schema-users'
 
 const users = [
   {

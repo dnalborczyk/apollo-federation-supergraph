@@ -1,4 +1,4 @@
-import type { Resolvers } from './inventory'
+import type { Resolvers } from 'schema-inventory'
 
 const delivery = [
   {

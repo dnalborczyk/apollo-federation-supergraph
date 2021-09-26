@@ -1,4 +1,4 @@
-import type { Resolvers } from './products'
+import type { Resolvers } from 'schema-products'
 
 const products = [
   {
