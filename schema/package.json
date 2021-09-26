@@ -4,12 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:schema-ast": "node .scripts/buildSchemaAstFromSdl.mjs",
+    "build:codegen": "graphql-codegen --config graphql-codegen.yml",
+    "build:supergraph-schema": "rover supergraph compose --config supergraph.yaml > schema-gateway/src/supergraph-gateway.graphql",
+    "prettier": "prettier",
+    "prettier:fix": "prettier --write .",
+    "typecheck": "tsc --noEmit"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@apollo/rover": "0.3.0",
+    "@graphql-codegen/cli": "2.2.0",
+    "@graphql-codegen/typescript": "2.2.2",
+    "@graphql-codegen/typescript-resolvers": "2.2.1",
     "copyfiles": "2.4.1",
+    "graphql-tag": "2.12.5",
+    "prettier": "2.4.1",
     "rimraf": "3.0.2",
     "typescript": "4.4.3"
   }

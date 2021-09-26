@@ -4,16 +4,11 @@
   "license": "MIT",
   "scripts": {
     "start": "serverless offline",
-    "build:codegen": "graphql-codegen --config graphql-codegen.yml",
     "prettier": "prettier",
     "prettier:fix": "prettier --write .",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.2.0",
-    "@graphql-codegen/typescript": "2.2.2",
-    "@graphql-codegen/typescript-resolvers": "2.2.1",
-    "graphql-tag": "2.12.5",
     "lerna": "^4.0.0",
     "prettier": "2.4.1",
     "serverless": "2.60.0",
