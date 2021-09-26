@@ -16,7 +16,7 @@ const delivery = [
 const resolvers: Resolvers = {
   Product: {
     delivery(product) {
-      return delivery.find((p) => p.id === product.id)
+      return delivery.find((p) => p.id === product.id)!
     },
   },
 }

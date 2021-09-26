@@ -26,7 +26,7 @@ const resolvers: Resolvers = {
     },
 
     product(_, args) {
-      return products.find((p) => p.id === args.id)
+      return products.find((p) => p.id === args.id)!
     },
   },
 
@@ -50,18 +50,18 @@ const resolvers: Resolvers = {
         return product.variation
       }
 
-      return products.find((p) => p.id === product.id).variation
+      return products.find((p) => p.id === product.id)!.variation
     },
 
     __resolveReference(product) {
       if ('id' in product) {
-        return products.find((p) => p.id === product.id)
+        return products.find((p) => p.id === product.id)!
       }
 
       if ('package' in product && product.sku) {
         return products.find(
           (p) => p.sku == product.sku && p.package === product.package,
-        )
+        )!
       }
 
       return {
