@@ -4,7 +4,6 @@
   "license": "MIT",
   "scripts": {
     "start": "serverless offline",
-    "build": "npm run build:schema-ast",
     "build:codegen": "graphql-codegen --config graphql-codegen.yml",
     "prettier": "prettier",
     "prettier:fix": "prettier --write .",
@@ -17,7 +16,7 @@
     "graphql-tag": "2.12.5",
     "lerna": "^4.0.0",
     "prettier": "2.4.1",
-    "serverless": "2.59.0",
+    "serverless": "2.60.0",
     "serverless-offline": "8.2.0",
     "serverless-webpack": "5.5.4",
     "ts-loader": "9.2.6",
