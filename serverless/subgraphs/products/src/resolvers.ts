@@ -58,9 +58,9 @@ const resolvers: Resolvers = {
         return products.find((p) => p.id === product.id)!
       }
 
-      if ('package' in product && product.sku) {
+      if ('package' in product && 'sku' in product) {
         return products.find(
-          (p) => p.sku == product.sku && p.package === product.package,
+          (p) => p.package === product.package && p.sku === product.sku,
         )!
       }
 
