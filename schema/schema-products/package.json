@@ -1,0 +1,16 @@
+{
+  "name": "schema-products",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "copy": "copyfiles --up 1 src/products.{json*,graphql} dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "graphql": "15.6.0"
+  }
+}
