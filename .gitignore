@@ -3,6 +3,9 @@
 dist
 node_modules
 
-**/src/*.d.ts
+
+**/schema-inventory/src/inventory.ts
+**/schema-products/src/products.ts
+**/schema-users/src/users.ts
 **/src/*.json
 **/src/*.json.d.ts
