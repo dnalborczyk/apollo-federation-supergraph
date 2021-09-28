@@ -2,21 +2,21 @@ import type { Resolvers } from 'schema-inventory'
 
 const delivery = [
   {
-    id: 'apollo-federation',
     estimatedDelivery: '6/25/2021',
     fastestDelivery: '6/24/2021',
+    id: 'apollo-federation',
   },
   {
-    id: 'apollo-studio',
     estimatedDelivery: '6/25/2021',
     fastestDelivery: '6/24/2021',
+    id: 'apollo-studio',
   },
 ]
 
 const resolvers: Resolvers = {
   Product: {
     delivery(product) {
-      return delivery.find((p) => p.id === product.id)!
+      return delivery.find(({ id }) => id === product.id)!
     },
   },
 }

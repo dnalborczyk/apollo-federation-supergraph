@@ -11,7 +11,7 @@ const users = [
 const resolvers: Resolvers = {
   User: {
     __resolveReference(user) {
-      return users.find((u) => u.email === user.email)!
+      return users.find(({ email }) => email === user.email)!
     },
   },
 }
