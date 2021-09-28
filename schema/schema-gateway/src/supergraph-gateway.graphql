@@ -50,6 +50,7 @@ type ProductVariation {
 
 type Query {
   allProducts: [Product] @join__field(graph: PRODUCTS)
+  getUser(email: ID!): User @join__field(graph: USERS)
   product(id: ID!): Product @join__field(graph: PRODUCTS)
 }
 
