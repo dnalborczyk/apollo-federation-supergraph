@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "lerna run build",
+    "build": "npm run build:supergraph-schema && npm run build:schema-ast && npm run build:codegen && npm run build:all && npm run copy:all",
+    "build:all": "lerna run build",
     "build:schema-ast": "node .scripts/buildSchemaAstFromSdl.mjs",
     "build:codegen": "graphql-codegen --config graphql-codegen.yml",
     "build:supergraph-schema": "rover supergraph compose --config supergraph.yaml > schema-gateway/src/supergraph-gateway.graphql",
-    "copy": "lerna run copy",
+    "copy:all": "lerna run copy",
     "prettier": "prettier",
     "prettier:fix": "prettier --write .",
     "typecheck": "tsc --noEmit"
