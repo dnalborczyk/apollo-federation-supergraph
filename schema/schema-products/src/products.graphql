@@ -23,7 +23,7 @@ type ProductDimension {
 }
 
 extend type Query {
-  allProducts: [Product]
+  allProducts: [Product!]!
   product(id: ID!): Product
 }
 
