@@ -10,10 +10,24 @@ plugins:
   - serverless-offline
 
 provider:
+  # https://stackoverflow.com/questions/55542422/how-to-get-url-endpoint-detail-as-variable-in-serverless-frameworks-serverless
+  # https://forum.serverless.com/t/how-do-i-get-the-url-for-a-function-in-my-serverless-yml-file/1386/4
+  environment:
+    # APIGATEWAY_UID: !Ref 'ApiGatewayRestApi'
+    APIGATEWAY_URL: !Join
+      - ''
+      - - 'https://'
+        - !Ref ApiGatewayRestApi
+        - '.execute-api.'
+        - ${self:provider.region}
+        - '.amazonaws.com/'
+        - ${self:provider.stage}
   lambdaHashingVersion: 20201221
   memorySize: 256
   name: aws
+  region: us-east-1
   runtime: nodejs14.x
+  stage: dev
 
 functions:
   - ${file(./gateway/serverless.gateway.yml)}
@@ -29,5 +43,4 @@ custom:
   serverless-offline:
     allowCache: true
     httpPort: 4000
-    noPrependStageInUrl: true
     useWorkerThreads: true
