@@ -3,6 +3,6 @@ subgraph-users:
     - http:
         # cors: true
         method: POST
-        path: users
+        path: /users
         # private: true
   handler: subgraphs/users/src/index.default

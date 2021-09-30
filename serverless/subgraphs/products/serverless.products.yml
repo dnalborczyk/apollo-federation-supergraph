@@ -3,6 +3,6 @@ subgraph-products:
     - http:
         # cors: true
         method: POST
-        path: products
+        path: /products
         # private: true
   handler: subgraphs/products/src/index.default

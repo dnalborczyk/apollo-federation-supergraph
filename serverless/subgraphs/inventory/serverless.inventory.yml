@@ -3,6 +3,6 @@ subgraph-inventory:
     - http:
         # cors: true
         method: POST
-        path: inventory
+        path: /inventory
         # private: true
   handler: subgraphs/inventory/src/index.default
