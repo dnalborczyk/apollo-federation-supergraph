@@ -20,7 +20,7 @@
     "@apollo/rover": "0.3.0",
     "@graphql-codegen/cli": "2.2.0",
     "@graphql-codegen/typescript": "2.2.2",
-    "@graphql-codegen/typescript-resolvers": "2.2.1",
+    "@graphql-codegen/typescript-resolvers": "2.3.0",
     "copyfiles": "2.4.1",
     "lerna": "4.0.0",
     "prettier": "2.4.1",

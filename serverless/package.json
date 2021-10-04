@@ -11,7 +11,7 @@
   "devDependencies": {
     "lerna": "^4.0.0",
     "prettier": "2.4.1",
-    "serverless": "2.60.1",
+    "serverless": "2.60.3",
     "serverless-offline": "8.2.0",
     "serverless-webpack": "5.5.4",
     "ts-loader": "9.2.6",
