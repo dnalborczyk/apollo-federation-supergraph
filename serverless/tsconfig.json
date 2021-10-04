@@ -3,7 +3,7 @@
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "CommonJS",
+    "module": "ES2020",
     "moduleResolution": "Node",
     "noEmitOnError": true,
     "resolveJsonModule": true,
