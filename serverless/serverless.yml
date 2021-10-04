@@ -10,6 +10,7 @@ plugins:
   - serverless-offline
 
 provider:
+  architecture: arm64
   # https://stackoverflow.com/questions/55542422/how-to-get-url-endpoint-detail-as-variable-in-serverless-frameworks-serverless
   # https://forum.serverless.com/t/how-do-i-get-the-url-for-a-function-in-my-serverless-yml-file/1386/4
   environment:
