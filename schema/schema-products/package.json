@@ -12,6 +12,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "graphql": "15.6.0"
+    "graphql": "15.6.1"
   }
 }
