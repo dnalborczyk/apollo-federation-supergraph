@@ -9,9 +9,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@apollo/gateway": "^0.42.1",
-    "apollo-server-lambda": "3.3.0",
-    "graphql": "^15.6.1",
-    "schema-gateway": "^0.0.0"
+    "@apollo/gateway": "0.42.1",
+    "apollo-server-lambda": "3.4.0",
+    "graphql": "15.6.1",
+    "schema-gateway": "0.0.0"
   }
 }
